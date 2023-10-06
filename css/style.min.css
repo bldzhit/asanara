@@ -647,8 +647,18 @@ h6 {
 }
 
 .block-spollers__title::marker {
-   display: none
+   display: none;
+
 }
+
+.block-spollers__title::-webkit-details-marker {
+   display: none;
+}
+.block-spollers__title::-moz-list-bullet {
+   list-style-type: none;
+}
+
+;
 
 .block-spollers__title p {
    position: absolute;
