@@ -620,6 +620,10 @@ h6 {
    transition: all .3s
 }
 
+.block-spollers__title::marker {
+   display: none
+}
+
 ._spoller-init .block-spollers__title {
    cursor: pointer;
    position: relative
@@ -644,18 +648,6 @@ h6 {
 ._spoller-init .block-spollers__title._spoller-active::before {
    -webkit-transform: rotateX(-180deg);
    transform: rotateX(-180deg)
-}
-
-.block-spollers__title::marker {
-   display: none;
-
-}
-
-.block-spollers__title::-webkit-details-marker {
-   display: none;
-}
-.block-spollers__title::-moz-list-bullet {
-   list-style-type: none;
 }
 
 .block-spollers__title p {
@@ -715,6 +707,10 @@ h6 {
 .header__logo {
    position: relative;
    z-index: 5
+}
+
+.header__logo img {
+   max-width: 11.75rem
 }
 
 .header__sub-menu {
@@ -819,6 +815,10 @@ h6 {
    flex-direction: column
 }
 
+.footer__logo img {
+   max-width: 9.375rem
+}
+
 .footer__logo:not(:last-child) {
    margin-bottom: .8125rem
 }
@@ -881,8 +881,9 @@ h6 {
 }
 
 .social__link {
-   display: -ms-grid;
-   display: grid;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
    -webkit-box-align: center;
    -ms-flex-align: center;
    align-items: center;
@@ -895,6 +896,10 @@ h6 {
    height: 2.0625rem;
    -webkit-transition: all .5s;
    transition: all .5s
+}
+
+.social__link img {
+   max-width: 1.25rem
 }
 
 .menu-footer {
@@ -1066,11 +1071,11 @@ h6 {
 }
 
 .hero__container::before {
-   top: -7%
+   top: 10%
 }
 
 .hero__container::after {
-   bottom: 20%
+   bottom: 32%
 }
 
 .hero__container .mini-decor::after,
@@ -1089,18 +1094,18 @@ h6 {
 }
 
 .hero__container .mini-decor::before {
-   top: 4%
+   top: 19%
 }
 
 .hero__container .mini-decor::after {
-   top: 69%
+   top: 59%
 }
 
 .hero__container .midle-decor::after {
    content: "";
    display: block;
    left: 0;
-   top: 39%;
+   top: 43%;
    background-color: rgba(255, 255, 255, .11);
    height: .0625rem;
    width: 3.4375rem;
@@ -1202,8 +1207,8 @@ h6 {
    gap: 1.625rem
 }
 
-.hero .social-hero__item {
-   cursor: pointer
+.hero .social-hero__item img {
+   max-width: 1rem
 }
 
 .about {
@@ -1219,7 +1224,7 @@ h6 {
    z-index: 2;
    display: -ms-grid;
    display: grid;
-   -ms-grid-columns: (1fr)[2];
+   -ms-grid-columns: 1fr 1fr;
    grid-template-columns: repeat(2, 1fr);
    -webkit-box-pack: justify;
    -ms-flex-pack: justify;
@@ -1264,21 +1269,22 @@ h6 {
 }
 
 .projects .first {
+   -webkit-transform: translate(-31%, -18%);
+   -ms-transform: translate(-31%, -18%);
+   transform: translate(-31%, -18%);
    position: absolute;
    left: 0;
    z-index: 2;
-   -webkit-transform: translate(-31%, -1%);
-   -ms-transform: translate(-31%, -1%);
-   transform: translate(-31%, -23%)
+   max-width: 23.125rem
 }
 
 .projects .second {
    position: absolute;
    right: 0;
    top: 0;
-   -webkit-transform: translate(34%, -23%);
-   -ms-transform: translate(34%, -23%);
-   transform: translate(34%, -23%)
+   -webkit-transform: translate(13%, -23%);
+   -ms-transform: translate(13%, -23%);
+   transform: translate(13%, -23%)
 }
 
 .projects__body {
@@ -1296,7 +1302,9 @@ h6 {
 }
 
 .projects .block-header__text {
-   max-width: 26.6875rem
+   max-width: 26.6875rem;
+   position: relative;
+   z-index: 2
 }
 
 .projects__content {
@@ -1370,10 +1378,14 @@ h6 {
    color: rgba(255, 255, 255, .6)
 }
 
+.slide-projects__text p:not(:last-child) {
+   margin-bottom: 8px
+}
+
 .investment__container {
    display: -ms-grid;
    display: grid;
-   -ms-grid-columns: (1fr)[2];
+   -ms-grid-columns: 1fr 1fr;
    grid-template-columns: repeat(2, 1fr);
    -webkit-column-gap: 1.25rem;
    -moz-column-gap: 1.25rem;
@@ -1428,7 +1440,7 @@ h6 {
 .vacancies__body {
    display: -ms-grid;
    display: grid;
-   -ms-grid-columns: (1fr)[2];
+   -ms-grid-columns: 1fr 1fr;
    grid-template-columns: repeat(2, 1fr);
    -webkit-box-pack: justify;
    -ms-flex-pack: justify;
@@ -1567,6 +1579,10 @@ h6 {
    transform: rotate(59deg)
 }
 
+.label__image img {
+   max-width: 2.1875rem
+}
+
 .label__info {
    padding: .5625rem 1.875rem .5625rem 0;
    text-align: center
@@ -1595,6 +1611,10 @@ h6 {
    -ms-flex-align: center;
    align-items: center;
    gap: .5rem
+}
+
+.position__icon img {
+   max-width: 2.375rem
 }
 
 .position__link {
@@ -1634,8 +1654,9 @@ h6 {
 }
 
 .social-info__link {
-   display: -ms-grid;
-   display: grid;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
    -webkit-box-align: center;
    -ms-flex-align: center;
    align-items: center;
@@ -1648,6 +1669,10 @@ h6 {
    height: 2.5rem;
    -webkit-transition: all .5s;
    transition: all .5s
+}
+
+.social-info__link img {
+   max-width: 1.5rem
 }
 
 .swiper {
@@ -1775,7 +1800,7 @@ h6 {
       margin-bottom: 3.375rem
    }
 
-   .top-block__tiile {
+   .top-block__title {
       font-size: 1.625rem
    }
 
@@ -2084,7 +2109,7 @@ h6 {
       margin-bottom: 1.875rem
    }
 
-   .top-block__tiile {
+   .top-block__title {
       font-size: 1.5rem
    }
 
@@ -2333,7 +2358,7 @@ h6 {
    }
 
    .hero__container::after {
-      top: 82%
+      top: 77%
    }
 
    .hero__container .mini-decor::before {
@@ -2356,16 +2381,15 @@ h6 {
 
    .projects .first {
       width: 29%;
-      height: 110%;
+      height: 130%;
       -o-object-fit: cover;
       object-fit: cover;
-      transform: translate(-31%, -1%)
+      transform: translate(-31%, -14%);
    }
 
    .projects .second {
-      top: -2%;
-      width: 49%;
-      height: 100%;
+      height: 122%;
+      width: 37%;
       -o-object-fit: cover;
       object-fit: cover
    }
@@ -2742,13 +2766,13 @@ h6 {
    }
 
    @supports (font-size:clamp(1.5rem, 1.4619047619rem + 0.1904761905vw, 1.625rem)) {
-      .top-block__tiile {
+      .top-block__title {
          font-size: clamp(1.5rem, 1.4619047619rem + .1904761905vw, 1.625rem)
       }
    }
 
    @supports not (font-size:clamp(1.5rem, 1.4619047619rem + 0.1904761905vw, 1.625rem)) {
-      .top-block__tiile {
+      .top-block__title {
          font-size: calc(1.5rem + .125 * (100vw - 20rem)/ 65.625)
       }
    }
@@ -3472,6 +3496,7 @@ h6 {
    }
 }
 
+/* ================BUGS-OF-GULP(OR-ME=)=================== */
 
 @media (max-width: 47.99875em) {
 
@@ -3502,11 +3527,15 @@ h6 {
    }
 }
 
-@media (max-width: 41.25em) {
+@media (max-width:41.25em) {
    .footer__container {
-      padding: 0rem 0rem 0rem 0rem;
+      padding: 0
    }
 }
+
+/* =================BUGS-OF-GULP(OR-ME=)================== */
+
+
 
 @media (any-hover:hover) {
    .button:hover {
