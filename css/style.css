@@ -631,6 +631,14 @@ h6 {
    display: none;
 }
 
+.block-spollers__title::-webkit-details-marker {
+   display: none;
+}
+
+.block-spollers__title::-moz-list-bullet {
+   list-style-type: none;
+}
+
 ._spoller-init .block-spollers__title {
    cursor: pointer;
    position: relative;
