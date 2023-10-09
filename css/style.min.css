@@ -625,6 +625,10 @@ h6 {
    display: none
 }
 
+summary::-webkit-details-marker {
+  display: none; 
+}
+
 ._spoller-init .block-spollers__title {
    cursor: pointer;
    position: relative
