@@ -251,6 +251,7 @@ h6 {
 }
 
 .select__value {
+   position: relative;
    text-transform: uppercase;
    font-weight: 500;
    font-size: 0.8125rem;
@@ -260,10 +261,12 @@ h6 {
    -webkit-box-align: center;
    -ms-flex-align: center;
    align-items: center;
-   height: 1.9375rem;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+   min-height: 1.9375rem;
    width: 5.75rem;
-   padding: 0.5rem 1.6875rem;
-   gap: 0.3125rem;
+   gap: 0.1875rem;
 }
 
 .select__value>* {
@@ -280,8 +283,8 @@ h6 {
    -webkit-box-flex: 0;
    -ms-flex: 0 0 10px;
    flex: 0 0 10px;
-   -webkit-transition: all 0s;
-   transition: all 0s;
+   -webkit-transition: all 0.3s ease 0s;
+   transition: all 0.3s ease 0s;
    display: -webkit-box;
    display: -ms-flexbox;
    display: flex;
@@ -291,9 +294,6 @@ h6 {
    -webkit-box-align: center;
    -ms-flex-align: center;
    align-items: center;
-   -webkit-transition: all 0.3s;
-   transition: all 0.3s;
-   margin-top: 0.125rem;
 }
 
 ._select-open .select__value:after {
@@ -307,9 +307,12 @@ h6 {
 }
 
 .select__content {
-   -webkit-box-flex: 1;
-   -ms-flex: 1 1 auto;
-   flex: 1 1 auto;
+   text-align: center;
+   -webkit-box-flex: 0;
+   -ms-flex: 0 1 auto;
+   flex: 0 1 auto;
+   overflow: hidden;
+   text-overflow: ellipsis;
    white-space: nowrap;
 }
 
@@ -329,43 +332,41 @@ h6 {
 }
 
 .select__options {
-   cursor: pointer;
    margin-top: 0.125rem;
+   cursor: pointer;
    color: #fff;
    position: absolute;
    top: calc(100% - 0.0625rem);
-   border-radius: 15px;
-   min-width: 100%;
    width: 5.75rem;
    text-align: center;
-   -ms-flex-item-align: center;
-   -ms-grid-row-align: center;
-   align-self: center;
-   height: 1.9375rem;
-   padding: 0.5rem 1.6875rem;
-   left: 0;
-   background-color: #F30000;
-   -webkit-transition: all 0.3s;
-   transition: all 0.3s;
-   border: 0.0625rem solid #F30000;
+   border-top: 0;
 }
 
 .select__scroll {
+   overflow-y: auto;
+   overflow-x: hidden;
    max-height: 12.5rem;
 }
 
 .select__option {
-   position: absolute;
    font-size: 0.8125rem;
    text-transform: uppercase;
    font-weight: 500;
-   width: 92px;
-   left: 0;
-   top: 0;
-   height: 100%;
+   width: 100%;
+   min-height: 1.875rem;
    text-align: center;
+   border-radius: 15px;
+   background-color: #F30000;
+   border: 0.0625rem solid #F30000;
+   -webkit-transition: all 0.3s;
+   transition: all 0.3s;
    cursor: pointer;
+   padding: 0rem 0.9375rem;
    color: inherit;
+}
+
+.select__option._select-selected {
+   background-color: #F30000;
 }
 
 .select__row {
@@ -631,14 +632,6 @@ h6 {
    display: none;
 }
 
-.block-spollers__title::-webkit-details-marker {
-   display: none;
-}
-
-.block-spollers__title::-moz-list-bullet {
-   list-style-type: none;
-}
-
 ._spoller-init .block-spollers__title {
    cursor: pointer;
    position: relative;
@@ -701,6 +694,11 @@ h6 {
 
 .header {
    z-index: 50;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   background-color: #0C0C0C;
 }
 
 .header__container {
@@ -1795,6 +1793,14 @@ h6 {
 }
 
 @media (min-width: 85.625em) {
+   .select__value {
+      padding-right: 0.9375rem;
+   }
+
+   .select__value {
+      padding-left: 0.9375rem;
+   }
+
    .block-header__title {
       font-size: 1.875rem;
    }
@@ -2430,13 +2436,6 @@ h6 {
 }
 
 @media (max-width: 47.99875em) {
-   .header {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      background-color: #0C0C0C;
-   }
 
    .header__container {
       min-height: 3.75rem;
@@ -2627,24 +2626,9 @@ h6 {
 @media (max-width: 29.99875em) {
    .select__value {
       width: 4.375rem;
-      gap: 0rem;
-   }
-
-   .select__value:after {
-      margin-left: -0.3125rem;
-   }
-
-   .select__content {
-      -webkit-transform: translate(-0.625rem, 0);
-      -ms-transform: translate(-0.625rem, 0);
-      transform: translate(-0.625rem, 0);
    }
 
    .select__options {
-      width: 4.375rem;
-   }
-
-   .select__option {
       width: 4.375rem;
    }
 
@@ -2719,6 +2703,30 @@ h6 {
 }
 
 @media (min-width: 20em) and (max-width: 85.625em) {
+   @supports (padding-right: clamp(0.0000000625rem, -0.2857142042rem + 1.4285713333vw, 0.9375rem)) {
+      .select__value {
+         padding-right: clamp(0.0000000625rem, -0.2857142042rem + 1.4285713333vw, 0.9375rem);
+      }
+   }
+
+   @supports not (padding-right: clamp(0.0000000625rem, -0.2857142042rem + 1.4285713333vw, 0.9375rem)) {
+      .select__value {
+         padding-right: calc(0.0000000625rem + 0.9374999375 * (100vw - 20rem) / 65.625);
+      }
+   }
+
+   @supports (padding-left: clamp(0.0000000625rem, -0.2857142042rem + 1.4285713333vw, 0.9375rem)) {
+      .select__value {
+         padding-left: clamp(0.0000000625rem, -0.2857142042rem + 1.4285713333vw, 0.9375rem);
+      }
+   }
+
+   @supports not (padding-left: clamp(0.0000000625rem, -0.2857142042rem + 1.4285713333vw, 0.9375rem)) {
+      .select__value {
+         padding-left: calc(0.0000000625rem + 0.9374999375 * (100vw - 20rem) / 65.625);
+      }
+   }
+
    @supports (font-size: clamp(1.5rem, 1.3857142857rem + 0.5714285714vw, 1.875rem)) {
       .block-header__title {
          font-size: clamp(1.5rem, 1.3857142857rem + 0.5714285714vw, 1.875rem);
@@ -3574,7 +3582,7 @@ h6 {
       color: #F30000;
    }
 
-   .select__options:hover {
+   .select__option:hover {
       border-color: #F30000;
       background-color: transparent;
       color: #F30000;
